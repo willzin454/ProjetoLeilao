@@ -1,25 +1,23 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/home/Home';
-import DefaultLayout from './components/DefaultLayout';
-import SimpleLayout from './components/SimpleLayout';
-import Login from './pages/login/Login';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/login/Login.jsx';
+import Signup from './pages/signup/Signup.jsx';
+import RecoverPassword from './pages/recoverPassword/RecoverPassword.jsx';
+import ChangePassword from './pages/changePassword/ChangePassword.jsx';
 
-function App() {
-  return (
-    <>
-      {/* <Header/> */}
-      <BrowserRouter>
-        <Routes>
-
-          <Route path='/' element={<DefaultLayout><Home /></DefaultLayout>} />
-          <Route path='/login' element={<SimpleLayout><Login /></SimpleLayout>} />
-
-        </Routes>
-      </BrowserRouter>
-      {/* <Footer/> */}
-    </>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/recover-password" element={<RecoverPassword />} />
+                    <Route path="/change-password" element={<ChangePassword />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
 export default App;
