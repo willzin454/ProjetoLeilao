@@ -1,0 +1,9 @@
+{
+    "welcome":"Bem-vindo",
+    "login":"Entrar",
+    "password":"Senha",
+    "email": "E-mail",
+    "button":{
+        "login":"Acessar"
+    }
+}

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 export const Login = () => {
     const [usuario, setUsuario] = useState({ email: "", password: "" });
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const handChange = (input) => {
         setUsuario({ ...usuario, [input.target.name] : input.target.value});
@@ -37,9 +38,9 @@ export const Login = () => {
                     </div>
                     <div className="p-field" style={{paddingTop: "1vh", padding: "2vh"}}>
                         <label htmlFor="password">Senha</label>
-                        <Password onChange={handChange} id="password" name='password' type="password" placeholder="Senha" required toggleMask />
+                        <InputText onChange={handChange} id="password" name='password' type="password" placeholder="Senha" required toggleMask />
                     </div>
-                    <Button onClick={login} label="Acessar" icon="pi pi-sign-in" className="p-mb-3" type="submit" />
+                    <Button onClick={login} label={t('login')} icon="pi pi-sign-in" className="p-mb-3" type="submit" />
                     <div className="p-d-flex p-jc-between">
                         <Link to="/signup">
                             <Button label="Cadastrar-se" className="p-button-text" />
