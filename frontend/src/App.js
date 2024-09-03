@@ -6,8 +6,7 @@ import RecoverPassword from './pages/recoverPassword/RecoverPassword.jsx';
 import ChangePassword from './pages/changePassword/ChangePassword.jsx';
 import PrivateRouter from './components/PrivateRouter.jsx';
 import Home from './pages/home/Home.jsx';
-import Logout from './components/logout/Logout.jsx';
-import Profile from './components/profile/profile.jsx';
+import Profile from './components/profile/Profile.jsx';
 
 const App = () => {
     return (
@@ -19,7 +18,6 @@ const App = () => {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/recover-password" element={<RecoverPassword />} />
                     <Route path="/change-password" element={<ChangePassword />} />
-                    <Route path="/logout" element={<Logout/>} />
                     <Route path="/profile" element={<Profile/>} />
                 </Routes>
             </div>

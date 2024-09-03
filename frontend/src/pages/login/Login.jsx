@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-//import { Password } from 'primereact/password';   parece que esse componente esta fazendo o auto complet.
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import './Login.css';
 
 export const Login = () => {
     const [usuario, setUsuario] = useState({ email: "", password: "" });
@@ -15,7 +15,6 @@ export const Login = () => {
     }
 
     const login = () => {
-        //chamada para o back-and para verificar as credenciais.
         if (usuario.email == "williamcarvalho493@gmail.com" && usuario.password == "123") {
             let token = "token do backend"
             localStorage.setItem("token", token);
@@ -27,20 +26,20 @@ export const Login = () => {
     }
 
     return (
-        <div className="p-d-flex p-jc-center p-ai-center" style={{height: "100vh"}}>
-            <div className="p-card p-p-4 p-shadow-4" style={{ width: '100%', maxWidth: '500px', padding: '2rem' }}>
-                <h2 className="p-text-center" style={{textAlign: "center"}}>LOGIN</h2>
+        <div className="login-container">
+            <div className="login-card">
+                <h2 className="login-title">LOGIN</h2>
                 <form className="p-fluid">
-                    <div className="p-field" style={{paddingTop: "1vh", padding: "2vh"}}>
+                    <div className="login-field">
                         <label htmlFor="email">Email</label>
                         <InputText onChange={handChange} id="email" name='email' type="email" placeholder="Email" required />
                     </div>
-                    <div className="p-field" style={{paddingTop: "1vh", padding: "2vh"}}>
+                    <div className="login-field">
                         <label htmlFor="password">Senha</label>
-                        <InputText onChange={handChange} id="password" name='password' type="password" placeholder="Senha" required toggleMask/>
+                        <InputText onChange={handChange} id="password" name='password' type="password" placeholder="Senha" required />
                     </div>
-                    <Button onClick={login} label="Acessar" style={{paddingRight: "40px"}} icon="pi pi-sign-in" className="p-mb-3" type="submit" />
-                    <div className="p-d-flex p-jc-between">
+                    <Button onClick={login} label="Acessar" className="login-button p-mb-3" icon="pi pi-sign-in" type="submit" />
+                    <div className="login-links">
                         <Link to="/signup">
                             <Button label="Cadastrar-se" className="p-button-text" />
                         </Link>

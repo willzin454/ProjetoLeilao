@@ -60,7 +60,7 @@ const ChangePassword = () => {
                     </div>
                     <Messages ref={messages} />
                     <Button label="Alterar Senha" icon="pi pi-lock" className="p-mb-3" type="submit" disabled={errors.length > 0 || password !== confirmPassword} />
-                    <Button label="Cancelar" className="p-button-text" />
+                    <Button label="Cancelar" className="p-button-text"/>
                 </form>
             </div>
         </div>

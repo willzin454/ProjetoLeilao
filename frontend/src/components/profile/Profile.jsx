@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import Logout from "../logout/Logout.jsx";
-import { Menubar } from 'primereact/menubar';
+import DefaultLayout from '../DefaultLayout';
 
 const Profile = () => {
-    const items = [
-        { label: 'Home', icon: 'pi pi-fw pi-home', command: () => window.location = '/Home'  },
-        { label: 'Perfil', icon: 'pi pi-fw pi-user', command: () => window.location = '/profile' },
-        { label: 'Logout', icon: 'pi pi-fw pi-power-off', command: () => <Logout/>}
-    ];
 
     const [cpf, setCpf] = useState('');
     const [address, setAddress] = useState({
@@ -45,9 +39,8 @@ const Profile = () => {
     };
 
     return (
-        <div className="profile-container">
-            <Menubar model={items} />
-
+        <div>
+            <DefaultLayout/>
             <h2>Editar Perfil</h2>
             <div className="p-field">
                 <label htmlFor="name">Nome Completo</label>
